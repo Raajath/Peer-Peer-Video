@@ -45,12 +45,11 @@ io.sockets.on('connection', function(socket) {
   
 	socket.on('create or join', function(room) {
 	  log('Received request to create or join room ' + room);
-  //
-  
+    
   
 	  var clientsInRoom = io.sockets.adapter.rooms[room];
-	 // var numClients = clientsInRoom ? Object.keys(clientsInRoom.sockets).length : 0;
-        var numClients = clientsInRoom ? Object.keys(clientsInRoom).length : 0;
+	  var numClients = clientsInRoom ? Object.keys(clientsInRoom.sockets).length : 0;
+       // var numClients = clientsInRoom ? Object.keys(clientsInRoom).length : 0;
 	  log('Room ' + room + ' now has ' + numClients + ' client(s)');
   
 	  if (numClients === 0) {
